@@ -1,12 +1,13 @@
+# Video Library
 
 ## Setup
 
-### Step 1: clone repo
+### Step 1: Clone repo
 - `git clone git@github.com:nbutenko/video-library.git`
 
 ### Step 2: DB and data setup
 - Install [Docker](https://docs.docker.com/get-started/)
-- Run `docker-compose up -d` - this will setup a DB container, as well as all the tables and data needed for testing the app
+- Run `docker-compose up -d` from root - this will set up a Docker container for the DB, create all the necessary tables, and seed the data required for testing the app
 
 ### Step 3: API setup
 - Run `npm i` from api folder
