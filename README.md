@@ -17,5 +17,5 @@
 - Run `npm i` from ui folder
 - Run `npm start` - `Compiled successfully` is a good sign!
 
-### Step 5: Testing
+## Testing
 - Run `npm test` from ui (added) or api (todo!) separately to run the tests
