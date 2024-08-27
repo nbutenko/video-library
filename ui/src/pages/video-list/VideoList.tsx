@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { httpClient } from '../../api/axios-client'
 import {
   Alert,
@@ -114,11 +114,11 @@ const VideoList: React.FC = () => {
   return (
     <>
       <Box className='grid grid-cols-5'>
-      <Navigation setSearchValue={setSearchValue} />
+        <Navigation setSearchValue={setSearchValue} />
 
         <Box className='col-span-5 md:col-span-4'>
           <Box className='w-full px-11 py-6 border-b-2 border-gray-700 top-0 sticky bg-primary-dark z-50'>
-            <Box className='flex space-x-5'>
+            <Box className='flex space-x-5' data-testid='controls'>
               <IconButton className='!bg-gray-50 text-black rounded-full p-2'>
                 <ChevronLeftIcon />
               </IconButton>
@@ -148,6 +148,7 @@ const VideoList: React.FC = () => {
                     <Box
                       className='relative group cursor-pointer'
                       onClick={() => navigate(`/videos/${item.id}`)}
+                      data-testid='video-card'
                     >
                       <img
                         src={`${item.poster}`}
@@ -187,6 +188,7 @@ const VideoList: React.FC = () => {
                           aria-label='delete'
                           className='!text-white !bg-gray-800 rounded-full h-min'
                           onClick={() => setDeleteVideo(item.id)}
+                          data-testid='delete-button'
                         >
                           <DeleteIcon fontSize='small' />
                         </IconButton>
@@ -195,7 +197,10 @@ const VideoList: React.FC = () => {
                   </Box>
                 ))}
 
-                <Box className='mb-6 w-full h-[10rem] lg:h-[15rem] flex justify-center items-center border-gray-600 border'>
+                <Box
+                  className='mb-6 w-full h-[10rem] lg:h-[15rem] flex justify-center items-center border-gray-600 border'
+                  data-testid='create-video-card'
+                >
                   <Button
                     variant='text'
                     sx={{ color: theme.palette.secondary.main }}
