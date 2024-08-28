@@ -90,10 +90,11 @@ const VideoList: React.FC = () => {
     setDisableSaveButton(true)
     try {
       await httpClient.put(`/videos/${updateVideo}`, video)
-      setVideos([
-        ...videos.filter((el) => el.id !== updateVideo),
-        { ...video, id: updateVideo as number }
-      ])
+      setVideos(
+        videos.map((el) => ({
+          ...(el.id === updateVideo ? { ...el, ...video } : el)
+        }))
+      )
       setUpdateVideo(null)
       setSaveError('')
     } catch (error) {
