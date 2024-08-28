@@ -18,4 +18,4 @@
 - Run `npm start` - `Compiled successfully` is a good sign!
 
 ## Testing
-- Run `npm test` from ui (added) or api (todo!) separately to run the tests
+- Run `npm test` from ui or api separately to run the tests (currently in progress)
