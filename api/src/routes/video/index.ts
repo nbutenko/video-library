@@ -11,7 +11,7 @@ import getVideos from './get-videos'
 import postVideo from './post-video'
 import validateResponse from '../../middlewares/validate-response'
 import getVideoById from './get-video-by-id'
-import putVideoById from './put-video'
+import putVideoById from './put-video-by-id'
 import deleteVideo from './delete-video'
 
 const videoRouter = Router()
