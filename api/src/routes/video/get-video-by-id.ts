@@ -6,11 +6,14 @@ const getVideoById = async (req: Request, res: Response) => {
   const { id } = req.params
 
   try {
-    const [rows] = await pool.execute('SELECT id, name, artist, url, poster FROM video WHERE id = ?', [id])
+    const [rows] = await pool.execute(
+      'SELECT id, name, artist, url, poster FROM video WHERE id = ?',
+      [id]
+    )
     const videos: Video[] = rows as Video[]
 
     if (!videos.length) {
-      return res.status(404).json({ error: 'Video not found' })
+      return res.status(404).send()
     }
 
     return res.status(200).json(videos[0])
