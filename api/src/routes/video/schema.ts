@@ -25,5 +25,5 @@ export const videoResponseSchema = joi.object({
 export const allVideosResponseSchema = joi.array().items(videoResponseSchema)
 
 export const searchRequestSchema = joi.object({
-  search: joi.string().allow('', null)
+  search: joi.string().optional()
 })
