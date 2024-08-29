@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import pool from '../../db'
 
-const deleteVideo = async (req: Request, res: Response) => {
+const deleteVideoById = async (req: Request, res: Response) => {
   const { id } = req.params
 
   try {
@@ -18,4 +18,4 @@ const deleteVideo = async (req: Request, res: Response) => {
   }
 }
 
-export default deleteVideo
+export default deleteVideoById
